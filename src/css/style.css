@@ -1,4 +1,124 @@
+html { scroll-behavior: smooth; }
 
-html {
-  scroll-behavior: smooth;
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4fbfb;
+  color: #1a1a1a;
+  overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Mode sombre */
+body.dark {
+  background: #1a1a1a;
+  color: #f4fbfb;
+}
+
+header {
+  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.7);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark header {
+  background: rgba(34,34,34,0.8);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav a {
+  margin-left: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #3bcebf;
+  transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+  color: #7b5fd8;
+  transform: scale(1.05);
+}
+
+nav a.active {
+  color: #7b5fd8;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: #8c93e3;
+}
+
+main section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+main section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#accueil {
+  background: linear-gradient(135deg, #7b5fd8, #3bcebf);
+  color: white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.project-card {
+  background: rgba(255,255,255,0.9);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(123,95,216,0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(123,95,216,0.2);
+}
+
+body.dark .project-card {
+  background: rgba(34,34,34,0.9);
+  color: #f4fbfb;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+button, input, textarea {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Bouton dark/light */
+#theme-toggle {
+  margin-left: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #3bcebf, #7b5fd8);
+  color: white;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
 }
