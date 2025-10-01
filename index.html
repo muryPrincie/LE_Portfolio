@@ -11,9 +11,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      darkMode: 'class'
-    }
+    tailwind.config = { darkMode: 'class' }
   </script>
 
   <!-- CSS perso -->
@@ -32,101 +30,133 @@
   </script>
 </head>
 <body class="font-[Poppins] bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
-  <!-- HEADER -->
-  <header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow z-50">
-    <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">MURY Princie</h1>
-      <nav id="navbar" class="flex items-center gap-6">
-        <a href="#accueil" class="hover:text-blue-500 transition">Accueil</a>
-        <a href="#profil" class="hover:text-blue-500 transition">Profil</a>
-        <a href="#competences" class="hover:text-blue-500 transition">Compétences</a>
-        <a href="#projets" class="hover:text-blue-500 transition">Projets</a>
-        <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
-        <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition">🌙</button>
-      </nav>
-    </div>
-  </header>
 
-  <!-- MAIN -->
-  <main class="pt-24 space-y-32">
-    <!-- Accueil -->
-    <section id="accueil" class="text-center animate-fade-in">
-      <h2 class="text-4xl font-extrabold">Bienvenue sur mon Portfolio</h2>
-      <p class="mt-4 text-lg">Développeur web full stack</p>
-      <a href="#projets" class="inline-block mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition animate-bounce">
-        Voir mes projets
-      </a>
-    </section>
+<!-- HEADER -->
+<header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow z-50">
+  <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
+    <h1 class="text-2xl font-bold">MURY Tiana Princie</h1>
+    <nav id="navbar" class="flex items-center gap-6">
+      <a href="#accueil" class="hover:text-blue-500 transition">Accueil</a>
+      <a href="#profil" class="hover:text-blue-500 transition">Profil</a>
+      <a href="#competences" class="hover:text-blue-500 transition">Compétences</a>
+      <a href="#projets" class="hover:text-blue-500 transition">Projets</a>
+      <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+      <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition" aria-label="Changer de thème">🌙</button>
+    </nav>
+  </div>
+</header>
 
-    <!-- Profil -->
-    <section id="profil" class="max-w-3xl mx-auto text-center animate-fade-in-up">
-      <h2 class="text-3xl font-bold">Profil</h2>
-      <p class="mt-4">Développeur web basé en France...</p>
-    </section>
+<main class="pt-24 space-y-32">
 
-    <!-- Compétences -->
-    <section id="competences" class="max-w-4xl mx-auto text-center animate-fade-in-up">
-      <h2 class="text-3xl font-bold">Compétences</h2>
-      <ul class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-4">
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">HTML5 / CSS3 / Tailwind CSS</li>
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">JavaScript / React / Vue.js</li>
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">Node.js / Express</li>
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">MongoDB / PostgreSQL</li>
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">Git / GitHub / CI-CD</li>
-        <li class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">Accessibilité / Responsive Design</li>
-      </ul>
-    </section>
+<!-- Accueil -->
+<section id="accueil" class="text-center animate-fade-in">
+  <h2 class="text-4xl font-extrabold">Bienvenue sur mon Portfolio</h2>
+  <p class="mt-4 text-lg">Développeur web full stack</p>
 
-    <!-- Projets -->
-    <section id="projets" class="max-w-4xl mx-auto text-center animate-fade-in-up">
-      <h2 class="text-3xl font-bold">Projets</h2>
-      <div class="mt-6 p-6 bg-gray-100 dark:bg-gray-800 rounded-lg shadow hover:scale-105 transition">
-        <h3 class="text-xl font-semibold">Site vitrine React</h3>
-        <p class="mt-2">Développement d’un site responsive...</p>
-        <a href="#" class="inline-block mt-4 text-blue-500 hover:underline">Voir le projet →</a>
+  <img 
+    src="src/assets/accueil-unscreen.gif" 
+    alt="Animation d'accueil" 
+    class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg"
+  >
+
+  <a 
+    href="#projets" 
+    class="inline-block mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition animate-bounce"
+  >
+    Voir mes projets
+  </a>
+</section>
+
+<!-- Profil -->
+<section id="profil" class="max-w-3xl mx-auto text-center animate-fade-in-up">
+  <h2 class="text-3xl font-bold">Profil</h2>
+  <p class="mt-4">
+    Développeur web basé en France, passionné par la création d’expériences interactives, performantes et accessibles.
+  </p>
+
+  <video 
+    class="w-11/12 max-w-3xl mx-auto mt-6 rounded-xl shadow-lg" 
+    autoplay 
+    muted 
+    loop 
+    playsinline
+  >
+    <source src="src/assets/profil.mp4" type="video/mp4">
+    Ton navigateur ne supporte pas la lecture vidéo.
+  </video>
+</section>
+
+  
+
+  <!-- Compétences -->
+<section id="competences" class="max-w-7xl mx-auto text-center animate-fade-in-up">
+  <h2 class="text-3xl font-bold mb-8">Compétences</h2>
+
+  <video 
+    class="w-full max-w-6xl mx-auto rounded-2xl shadow-lg" 
+    autoplay 
+    muted 
+    loop 
+    playsinline
+  >
+    <source src="src/assets/competences.mp4" type="video/mp4">
+    Ton navigateur ne supporte pas la lecture vidéo.
+  </video>
+</section>
+
+
+  <!-- Projets -->
+  <section id="projets" class="max-w-5xl mx-auto text-center animate-fade-in-up">
+    <h2 class="text-3xl font-bold mb-8">Projets</h2>
+    <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"></div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up">
+    <h2 class="text-3xl font-bold">Contact</h2>
+    <form name="contact" method="POST" netlify class="mt-6 flex flex-col gap-4">
+      <label for="name" class="sr-only">Nom</label>
+      <input type="text" id="name" name="name" placeholder="Votre nom" required class="p-3 rounded-lg border dark:border-gray-700" />
+
+      <label for="email" class="sr-only">Email</label>
+      <input type="email" id="email" name="email" placeholder="Votre email" required class="p-3 rounded-lg border dark:border-gray-700" />
+
+      <label for="message" class="sr-only">Message</label>
+      <textarea id="message" name="message" rows="6" placeholder="Votre message" required class="p-3 rounded-lg border dark:border-gray-700"></textarea>
+
+      <button type="submit" class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition">Envoyer</button>
+    </form>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-20 py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
+  © 2025 Portfolio Dev. Tous droits réservés.
+</footer>
+
+<!-- JS -->
+<script src="src/js/script.js"></script>
+<script>
+  // Flip cards projets
+  const projectsGrid = document.getElementById("projects-grid");
+  for(let i = 1; i <= 7; i++){
+    const card = document.createElement("div");
+    card.className = "flip-card";
+
+    card.innerHTML = `
+      <div class="flip-inner shadow-lg cursor-pointer">
+        <div class="flip-front bg-gradient-to-r from-purple-400 to-pink-500">
+          <h3 class="text-xl font-bold">Projet ${i}</h3>
+          <p class="mt-2">Titre et description courte</p>
+        </div>
+        <div class="flip-back rounded-2xl">
+          <p>Détails du projet ${i}, technologies utilisées, et lien.</p>
+        </div>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up">
-      <h2 class="text-3xl font-bold">Contact</h2>
-      <form name="contact" method="POST" netlify class="mt-6 flex flex-col gap-4">
-        <input type="text" name="name" placeholder="Votre nom" required class="p-3 rounded-lg border dark:border-gray-700" />
-        <input type="email" name="email" placeholder="Votre email" required class="p-3 rounded-lg border dark:border-gray-700" />
-        <textarea name="message" rows="6" placeholder="Votre message" required class="p-3 rounded-lg border dark:border-gray-700"></textarea>
-        <button type="submit" class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="mt-20 py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
-    © 2025 Portfolio Dev. Tous droits réservés.
-  </footer>
-
-  <!-- Animations perso -->
-  <style>
-    @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-    .animate-fade-in { animation: fade-in 1.2s ease-out forwards; }
-    .animate-fade-in-up { animation: fade-in-up 1.2s ease-out forwards; }
-  </style>
-
-  <!-- JS -->
-  <script src="src/js/script.js"></script>
-  <script>
-    const toggleBtn = document.getElementById('theme-toggle');
-    toggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      if (document.documentElement.classList.contains('dark')) {
-        localStorage.theme = 'dark';
-        toggleBtn.textContent = '☀️';
-      } else {
-        localStorage.theme = 'light';
-        toggleBtn.textContent = '🌙';
-      }
-    });
-  </script>
+    `;
+    projectsGrid.appendChild(card);
+  }
+</script>
 </body>
 </html>
