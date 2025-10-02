@@ -62,7 +62,7 @@ nav a.active {
 
 /* ===== Sections ===== */
 main section {
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,6 +71,7 @@ main section {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+  padding: 8rem 2rem;
 }
 
 main section.visible {
@@ -83,7 +84,7 @@ main section.visible {
   background: linear-gradient(135deg, #7b5fd8, #3bcebf);
   color: white;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
 }
 
 /* ===== Compétences ===== */
@@ -121,14 +122,16 @@ main section.visible {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
-  padding: 2rem;
+  padding: 2rem 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
+
 .flip-card {
   perspective: 1200px;
+  width: 100%;
 }
 
 .flip-inner {
@@ -146,17 +149,15 @@ main section.visible {
 .flip-front, .flip-back {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 1rem;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  padding: 2rem;
 }
 
 .flip-front {
@@ -164,7 +165,6 @@ main section.visible {
   font-size: 1.2rem;
   font-weight: 600;
   gap: 0.5rem;
-  background: linear-gradient(135deg, #7b5fd8, #3bcebf);
 }
 
 .flip-back {
@@ -175,6 +175,7 @@ main section.visible {
   line-height: 1.6;
   font-size: 1rem;
 }
+
 
 /* ===== Boutons ===== */
 button, input, textarea {
@@ -219,3 +220,26 @@ button:hover {
 .animate-fade-in-up {
   animation: fade-in-up 1.2s ease-out forwards;
 }
+
+
+  .typewriter {
+    overflow: hidden;
+    border-right: .15em solid #000; /* curseur */
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    display: inline-block;
+    animation: typing 5s steps(30, end) infinite, blink-caret .75s step-end infinite;
+  }
+
+  @keyframes typing {
+    0%   { width: 0 }
+    60%  { width: 26ch }  /* écriture rapide */
+    95%  { width: 26ch }  /* pause encore plus longue */
+    100% { width: 0 }     /* effacement instantané */
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black }
+  }
