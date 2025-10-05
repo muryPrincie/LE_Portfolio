@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
       "MY_SHOP",
       "PUISSANCE 4",
       "MY_WYSIWYG",
-      "MY_SNAPCHAT",
+      "MY_DISCORD",
       "MY_CINEMA"
     ];
 const projectLinks = [
@@ -41,7 +41,7 @@ const projectLinks = [
   'https://jump-area.wuaze.com/login.php',// MY_SHOP
   'https://kong4.netlify.app/', // PUISSANCE 4
   'https://remarkable-starship-314c64.netlify.app/', // MY_WYSIWYG
-  '',             // MY_SNAPCHAT
+  '',             // MY_DISCORD
   '',             // MY_CINEMA
 ];
 
