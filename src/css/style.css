@@ -1,3 +1,21 @@
+/* ===== Titres de section (h2) ===== */
+.section-title {
+  background: rgba(255,255,255,0.8);
+  color: inherit;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(229,231,235,1); /* gris-200 */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+body.dark .section-title {
+  background: rgba(17,24,39,0.8); /* gris-900 */
+  border-color: #374151; /* gris-700 */
+}
 /* ===== Base ===== */
 html {
   scroll-behavior: smooth;
@@ -88,34 +106,6 @@ main section.visible {
 }
 
 /* ===== Compétences ===== */
-#skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.skill-pill {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.8rem 1.2rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #3bcebf, #7b5fd8);
-  color: white;
-  font-weight: 600;
-  min-width: 200px;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s;
-}
-
-.skill-pill:hover {
-  transform: scale(1.05);
-}
 
 /* ===== Projets Flip Cards ===== */
 #projects-grid {
