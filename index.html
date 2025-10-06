@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
   <head>
@@ -53,12 +52,13 @@
         <!-- Titre principal -->
   <h1 class="text-7xl font-extrabold mb-4">MURY PRINCIE</h1>
 
-        <!-- Effet machine à écrire -->
-        <div class="mb-12">
-          <h2 class="typewriter text-2xl font-medium">
-            Développeur web full stack
-          </h2>
-        </div>
+    <!-- Effet machine à écrire -->
+<div class="mb-12">
+  <h2 class="typewriter text-2xl font-medium">
+    Développeur web full stack
+  </h2>
+</div>
+
 
         <img 
           src="src/assets/moiofficiel.png" 
@@ -80,12 +80,15 @@
   <div id="profil-bg" class="absolute top-0 left-0 w-full h-full min-h-screen -z-10"></div>
 
         <div class="max-w-3xl mx-auto relative z-10">
-          <h2 class="text-4xl font-bold mb-6 section-title max-w-2xl mx-auto">Profil</h2>
-          <!-- Slogan -->
-          <p class="text-xl font-medium leading-relaxed">
-            Je suis <span class="font-bold">MURY Princie</span>, un passionné du web et des technologies.  
-            Mon quotidien : <span class="font-semibold">allier design et back-end pour façonner vos projets</span>.
-          </p>
+          <h2 class="text-4xl font-bold mb-6 section-title max-w-2xl mx-auto bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
+            Profil
+          </h2>
+        <!-- Slogan -->
+<p class="text-xl font-medium leading-relaxed text-white">
+  Je suis <span class="font-bold">MURY Princie</span>, un passionné du web et des technologies.  
+  Mon quotidien : <span class="font-semibold">allier design et back-end pour façonner vos projets</span>.
+</p>
+
 
           <video 
             class="w-11/12 max-w-3xl mx-auto mt-10 rounded-xl shadow-lg" 
@@ -106,7 +109,9 @@
 
       <!-- ========== Compétences ========== -->
   <section id="competences" class="max-w-7xl mx-auto text-center animate-fade-in-up py-20">
-  <h2 class="text-3xl font-bold mb-8 section-title">Compétences</h2>
+  <h2 class="text-3xl font-bold mb-8 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
+    Compétences
+  </h2>
         <video 
           class="w-full max-w-6xl mx-auto rounded-2xl shadow-lg" 
           autoplay 
@@ -121,32 +126,70 @@
 
       <!-- ========== Projets ========== -->
   <section id="projets" class="max-w-5xl mx-auto text-center animate-fade-in-up py-20" style="scroll-margin-top: 120px;">
-  <h2 class="text-3xl font-bold mb-4 section-title">Projets</h2>
+  <h2 class="text-3xl font-bold mb-4 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
+    Projets
+  </h2>
         <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"></div>
       </section>
   <script src="src/js/script.js"></script>
 
-      <!-- ========== Contact ========== -->
-  <section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up py-20">
-  <h2 class="text-3xl font-bold section-title">Contact</h2>
-        <img 
-          src="src/assets/accueil-unscreen.gif" 
-          alt="Animation d'accueil" 
-          class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg"
-        >
-        <form name="contact" method="POST" netlify class="mt-6 flex flex-col gap-4">
-          <label for="name" class="sr-only">Nom</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required class="p-3 rounded-lg border dark:border-gray-700" />
+    <!-- ========== Contact ========== -->
+<section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative" style="scroll-margin-top: 120px;">
+  <h2 class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative">
+    Contact
+  </h2>
 
-          <label for="email" class="sr-only">Email</label>
-          <input type="email" id="email" name="email" placeholder="Votre email" required class="p-3 rounded-lg border dark:border-gray-700" />
+  <img 
+    src="src/assets/accueil-unscreen.gif" 
+    alt="Animation d'accueil" 
+    class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg z-10 relative"
+  >
 
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Votre message" required class="p-3 rounded-lg border dark:border-gray-700"></textarea>
+  <form name="contact" method="POST" netlify class="mt-6 flex flex-col gap-4 z-10 relative">
+    <label for="name" class="sr-only">Nom</label>
+    <input 
+      type="text" 
+      id="name" 
+      name="name" 
+      placeholder="Votre nom" 
+      required 
+      class="p-3 rounded-lg border dark:border-gray-700 text-black"
+    />
 
-          <button type="submit" class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition">Envoyer</button>
-        </form>
-      </section>
+    <label for="email" class="sr-only">Email</label>
+    <input 
+      type="email" 
+      id="email" 
+      name="email" 
+      placeholder="Votre email" 
+      required 
+      class="p-3 rounded-lg border dark:border-gray-700 text-black"
+    />
+
+    <label for="message" class="sr-only">Message</label>
+    <textarea 
+      id="message" 
+      name="message" 
+      rows="6" 
+      placeholder="Votre message" 
+      required 
+      class="p-3 rounded-lg border dark:border-gray-700 text-black"
+    ></textarea>
+
+    <button 
+      type="submit" 
+      class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition"
+    >
+      Envoyer
+    </button>
+  </form>
+</section>
+
+<!-- Scripts séparés -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+<script src="src/js/vanta-contact.js"></script> <!-- Script Vanta pour contact -->
+
 
     </main>
 
