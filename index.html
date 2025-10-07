@@ -5,69 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MURY Princie</title>
 
-    <!-- ====== Fonts ====== -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
+    <!--Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- ====== Tailwind CSS ====== -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { darkMode: 'class' }
+      tailwind.config = { darkMode: "class" };
     </script>
 
-    <!-- ====== CSS Perso ====== -->
     <link href="src/css/style.css" rel="stylesheet" />
 
-    <!-- ====== Préférence Thème ====== -->
     <script>
       if (
-        localStorage.theme === 'dark' ||
-        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
       ) {
-        document.documentElement.classList.add('dark');
+        document.documentElement.classList.add("dark");
       } else {
-        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.remove("dark");
       }
     </script>
   </head>
-  <body class="font-[Poppins] bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500">
-
+  <body
+    class="font-[Poppins] bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500"
+  >
     <!-- ================= HEADER ================= -->
-    <header class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow z-50">
+    <header
+      class="fixed top-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur shadow z-50"
+    >
       <div class="max-w-5xl mx-auto flex justify-between items-center p-4">
         <nav id="navbar" class="flex items-center gap-6">
           <a href="#accueil" class="hover:text-blue-500 transition">Accueil</a>
           <a href="#profil" class="hover:text-blue-500 transition">Profil</a>
-          <a href="#competences" class="hover:text-blue-500 transition">Compétences</a>
+          <a href="#competences" class="hover:text-blue-500 transition"
+            >Compétences</a
+          >
           <a href="#projets" class="hover:text-blue-500 transition">Projets</a>
           <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
-          <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition" aria-label="Changer de thème">🌙</button>
+          <button
+            id="theme-toggle"
+            class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"
+            aria-label="Changer de thème"
+          >
+            🌙
+          </button>
         </nav>
       </div>
     </header>
 
-  <main class="pt-24 space-y-16">
-
+    <main class="pt-24 space-y-16">
       <!-- ========== Accueil ========== -->
-  <section id="accueil" class="text-center animate-fade-in py-20">
-        <!-- Titre principal -->
-  <h1 class="text-7xl font-extrabold mb-4">MURY PRINCIE</h1>
+      <section id="accueil" class="text-center animate-fade-in py-20">
+        <h1 class="text-7xl font-extrabold mb-4">MURY PRINCIE</h1>
 
-    <!-- Effet machine à écrire -->
-<div class="mb-12">
-  <h2 class="typewriter text-2xl font-medium">
-    Développeur web full stack
-  </h2>
-</div>
+        <!-- Titre accroche -->
+        <div class="mb-12">
+          <h2 class="typewriter text-2xl font-medium">
+            Développeur web full stack
+          </h2>
+        </div>
 
-
-        <img 
-          src="src/assets/moiofficiel.png" 
-          alt="Image d'accueil" 
+        <img
+          src="src/assets/moiofficiel.png"
+          alt="Image d'accueil"
           class="w-3/12 max-w-sm mx-auto mb-6 rounded-2xl animate-fade-in-up"
-        >
+        />
 
-        <a 
-          href="#projets" 
+        <a
+          href="#projets"
           class="inline-block mt-6 px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition animate-bounce"
         >
           Voir mes projets
@@ -75,128 +84,160 @@
       </section>
 
       <!-- ========== Profil ========== -->
-  <section id="profil" class="relative text-center animate-fade-in-up py-20" style="min-height:100vh;">
-        <!-- Fond interactif -->
-  <div id="profil-bg" class="absolute top-0 left-0 w-full h-full min-h-screen -z-10"></div>
+      <section
+        id="profil"
+        class="relative text-center animate-fade-in-up py-20"
+        style="min-height: 100vh"
+      >
+        <div
+          id="profil-bg"
+          class="absolute top-0 left-0 w-full h-full min-h-screen -z-10"
+        ></div>
 
         <div class="max-w-3xl mx-auto relative z-10">
-          <h2 class="text-4xl font-bold mb-6 section-title max-w-2xl mx-auto bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
+          <h2
+            class="text-4xl font-bold mb-6 section-title max-w-2xl mx-auto bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500"
+          >
             Profil
           </h2>
-        <!-- Slogan -->
-<p class="text-xl font-medium leading-relaxed text-white">
-  Je suis <span class="font-bold">MURY Princie</span>, un passionné du web et des technologies.  
-  Mon quotidien : <span class="font-semibold">allier design et back-end pour façonner vos projets</span>.
-</p>
+          <!-- Slogan -->
+          <p class="text-xl font-medium leading-relaxed text-white">
+            Je suis <span class="font-bold">MURY Princie</span>, un passionné du
+            web et des technologies. Mon quotidien :
+            <span class="font-semibold"
+              >allier design et back-end pour façonner vos projets</span
+            >.
+          </p>
 
-
-          <video 
-            class="w-11/12 max-w-3xl mx-auto mt-10 rounded-xl shadow-lg" 
-            autoplay 
-            muted 
-            loop 
+          <video
+            class="w-11/12 max-w-3xl mx-auto mt-10 rounded-xl shadow-lg"
+            autoplay
+            muted
+            loop
             playsinline
           >
-            <source src="src/assets/profil.mp4" type="video/mp4">
+            <source src="src/assets/profil.mp4" type="video/mp4" />
             Ton navigateur ne supporte pas la lecture vidéo.
           </video>
         </div>
       </section>
 
-  <!-- ========== Fond interactif (Vanta.js) ========== -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+      <!--  Vanta.js pour les fonds -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
       <!-- ========== Compétences ========== -->
-  <section id="competences" class="max-w-7xl mx-auto text-center animate-fade-in-up py-20">
-  <h2 class="text-3xl font-bold mb-8 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
-    Compétences
-  </h2>
-        <video 
-          class="w-full max-w-6xl mx-auto rounded-2xl shadow-lg" 
-          autoplay 
-          muted 
-          loop 
+      <section
+        id="competences"
+        class="max-w-7xl mx-auto text-center animate-fade-in-up py-20"
+      >
+        <h2
+          class="text-3xl font-bold mb-8 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500"
+        >
+          Compétences
+        </h2>
+        <video
+          class="w-full max-w-6xl mx-auto rounded-2xl shadow-lg"
+          autoplay
+          muted
+          loop
           playsinline
         >
-          <source src="src/assets/competences.mp4" type="video/mp4">
+          <source src="src/assets/competences.mp4" type="video/mp4" />
           Ton navigateur ne supporte pas la lecture vidéo.
         </video>
       </section>
 
       <!-- ========== Projets ========== -->
-  <section id="projets" class="max-w-5xl mx-auto text-center animate-fade-in-up py-20" style="scroll-margin-top: 120px;">
-  <h2 class="text-3xl font-bold mb-4 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
-    Projets
-  </h2>
-        <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"></div>
+      <section
+        id="projets"
+        class="max-w-5xl mx-auto text-center animate-fade-in-up py-20"
+        style="scroll-margin-top: 120px"
+      >
+        <h2
+          class="text-3xl font-bold mb-4 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500"
+        >
+          Projets
+        </h2>
+        <div
+          id="projects-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"
+        ></div>
       </section>
-  <script src="src/js/script.js"></script>
+      <script src="src/js/script.js"></script>
 
-    <!-- ========== Contact ========== -->
-<section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative" style="scroll-margin-top: 120px;">
-  <h2 class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative">
-    Contact
-  </h2>
+      <!-- ========== Contact ========== -->
+      <section
+        id="contact"
+        class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative"
+        style="scroll-margin-top: 120px"
+      >
+        <h2
+          class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative"
+        >
+          Contact
+        </h2>
 
-  <img 
-    src="src/assets/accueil-unscreen.gif" 
-    alt="Animation d'accueil" 
-    class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg z-10 relative"
-  >
+        <img
+          src="src/assets/accueil-unscreen.gif"
+          alt="Animation d'accueil"
+          class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg z-10 relative"
+        />
 
-  <form name="contact" method="POST" netlify class="mt-6 flex flex-col gap-4 z-10 relative">
-    <label for="name" class="sr-only">Nom</label>
-    <input 
-      type="text" 
-      id="name" 
-      name="name" 
-      placeholder="Votre nom" 
-      required 
-      class="p-3 rounded-lg border dark:border-gray-700 text-black"
-    />
+        <form
+          name="contact"
+          method="POST"
+          netlify
+          class="mt-6 flex flex-col gap-4 z-10 relative"
+        >
+          <label for="name" class="sr-only">Nom</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Votre nom"
+            required
+            class="p-3 rounded-lg border dark:border-gray-700 text-black"
+          />
 
-    <label for="email" class="sr-only">Email</label>
-    <input 
-      type="email" 
-      id="email" 
-      name="email" 
-      placeholder="Votre email" 
-      required 
-      class="p-3 rounded-lg border dark:border-gray-700 text-black"
-    />
+          <label for="email" class="sr-only">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Votre email"
+            required
+            class="p-3 rounded-lg border dark:border-gray-700 text-black"
+          />
 
-    <label for="message" class="sr-only">Message</label>
-    <textarea 
-      id="message" 
-      name="message" 
-      rows="6" 
-      placeholder="Votre message" 
-      required 
-      class="p-3 rounded-lg border dark:border-gray-700 text-black"
-    ></textarea>
+          <label for="message" class="sr-only">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            placeholder="Votre message"
+            required
+            class="p-3 rounded-lg border dark:border-gray-700 text-black"
+          ></textarea>
 
-    <button 
-      type="submit" 
-      class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition"
-    >
-      Envoyer
-    </button>
-  </form>
-</section>
+          <button
+            type="submit"
+            class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition"
+          >
+            Envoyer
+          </button>
+        </form>
+      </section>
 
-<!-- Scripts séparés -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
-<script src="src/js/vanta-contact.js"></script> <!-- Script Vanta pour contact -->
-
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
+      <script src="src/js/vanta-contact.js"></script>
+      <!-- Script Vanta pour contact -->
     </main>
 
     <!-- ================= FOOTER ================= -->
     <footer class="mt-20 py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
       © 2025 Portfolio Dev. Tous droits réservés.
     </footer>
-
   </body>
 </html>
