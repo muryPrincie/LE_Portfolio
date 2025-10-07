@@ -17,7 +17,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Grid pour les projets
   const projectsGrid = document.getElementById("projects-grid");
   if (projectsGrid) {
     const gradients = [
@@ -29,14 +28,21 @@ window.addEventListener("DOMContentLoaded", () => {
     ];
 
     const projectNames = [
-      "MY_SPOTIFY",
-      "MY_SHOP",
-      "PUISSANCE 4",
+      "BANGER_PLANET",
+      "JUMP_ERA",
+      "PUISSANCE_KONG",
       "MY_WYSIWYG",
-      "MY_DISCORD",
+      "PROJET PERSO",
     ];
 
-    // Liens des projets
+  const projectDetails = [
+  "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive permettant d’explorer albums, artistes et genres à travers une interface moderne et fluide. (Développé avec React,Tailwind, CSS et une API Docker)",
+  "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs avec un système d’authentification complet, ainsi que des pages produits connectées à leur propre base de données. (Développé avec PHP, MySQL et Tailwind.css)",
+  "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript, avec un univers inspiré de Donkey Kong et un fond thématique. Le jeu propose un mode deux joueurs et un mode contre l’ordinateur (en cours de finalisation... Développer avec Javascript, CSS et HTML)",
+  "MY_WYSIWYG est un éditeur de texte en ligne personnalisable, conçu pour permettre la mise en forme et le stylage du contenu avec une interface claire, moderne et intuitive.(Développé avec Javascript, HTML et CSS).",
+  "PROJET PERSO – En cours de conception.",
+];
+
     const projectLinks = [
       "spotify.html",
       "https://jump-area.wuaze.com/login.php",
@@ -49,21 +55,21 @@ window.addEventListener("DOMContentLoaded", () => {
       const card = document.createElement("div");
       card.className = "flip-card";
 
-      let linkHtml = projectLinks[i]
-        ? `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600">Voir le projet en ligne</a>`
-        : "";
+      let linkHtml = "";
+      if (projectLinks[i]) {
+        linkHtml =
+          projectNames[i] === "BANGER_PLANET"
+            ? `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600">Voir la vidéo</a>`
+            : `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600">Voir le projet en ligne</a>`;
+      }
 
       card.innerHTML = `
         <div class="flip-inner shadow-lg cursor-pointer">
-          <div class="flip-front bg-gradient-to-r ${
-            gradients[i]
-          } p-6 rounded-2xl">
+          <div class="flip-front bg-gradient-to-r ${gradients[i]} p-6 rounded-2xl">
             <h3 class="text-xl font-bold">${projectNames[i]}</h3>
           </div>
           <div class="flip-back rounded-2xl p-6 bg-gray-800 text-white">
-            <p>Détails du projet ${projectNames[i]}, technologies utilisées.${
-        linkHtml ? "<br>" + linkHtml : ""
-      }</p>
+            <p>${projectDetails[i]}${linkHtml ? "<br><br>" + linkHtml : ""}</p>
           </div>
         </div>
       `;
@@ -71,7 +77,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // fond contact
   VANTA.BIRDS({
     el: "#contact",
     mouseControls: true,
@@ -120,7 +125,6 @@ window.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", onScroll);
   onScroll();
 
-  //Thème sombre et clair
   const themeToggle = document.getElementById("theme-toggle");
 
   function setTheme(theme) {
