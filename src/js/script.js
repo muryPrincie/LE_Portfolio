@@ -1,6 +1,10 @@
-// fond profil
 window.addEventListener("DOMContentLoaded", () => {
-  if (window.VANTA && document.getElementById("profil-bg")) {
+  const profilBg = document.getElementById("profil-bg");
+
+  // Initialisation VANTA selon le thème
+  const initVanta = (isDark) => {
+    if (profilBg.vantaEffect) profilBg.vantaEffect.destroy();
+
     VANTA.NET({
       el: "#profil-bg",
       mouseControls: true,
@@ -9,13 +13,37 @@ window.addEventListener("DOMContentLoaded", () => {
       minWidth: 200.0,
       scale: 1.0,
       scaleMobile: 1.0,
-      color: 0x1e3a8a,
-      backgroundColor: 0x000000,
       points: 12.0,
       maxDistance: 20.0,
       spacing: 18.0,
+      color: 0x1e3a8a,                    
+      backgroundColor: isDark ? 0x1a1a1a : 0xffffff 
     });
-  }
+  };
+
+  // Fonction pour mettre à jour le thème
+  const themeToggle = document.getElementById("theme-toggle");
+  const setTheme = (theme) => {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+
+    // Mise à jour theme VANTA
+    if (profilBg && window.VANTA) initVanta(isDark);
+  };
+
+ 
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
+
+  // Toggle du thème
+  themeToggle.addEventListener("click", () => {
+    const newTheme = document.documentElement.classList.contains("dark")
+      ? "light"
+      : "dark";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
 
   const projectsGrid = document.getElementById("projects-grid");
   if (projectsGrid) {
@@ -35,13 +63,13 @@ window.addEventListener("DOMContentLoaded", () => {
       "PROJET PERSO",
     ];
 
-  const projectDetails = [
-  "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive permettant d’explorer albums, artistes et genres à travers une interface moderne et fluide. (Développé avec React,Tailwind, CSS et une API Docker)",
-  "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs avec un système d’authentification complet, ainsi que des pages produits connectées à leur propre base de données. (Développé avec PHP, MySQL et Tailwind.css)",
-  "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript, avec un univers inspiré de Donkey Kong et un fond thématique. Le jeu propose un mode deux joueurs et un mode contre l’ordinateur (en cours de finalisation... Développer avec Javascript, CSS et HTML)",
-  "MY_WYSIWYG est un éditeur de texte en ligne personnalisable, conçu pour permettre la mise en forme et le stylage du contenu avec une interface claire, moderne et intuitive.(Développé avec Javascript, HTML et CSS).",
-  "PROJET PERSO – En cours de conception.",
-];
+    const projectDetails = [
+      "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive...",
+      "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs...",
+      "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript...",
+      "MY_WYSIWYG est un éditeur de texte en ligne personnalisable...",
+      "PROJET PERSO – En cours de conception.",
+    ];
 
     const projectLinks = [
       "spotify.html",
@@ -57,16 +85,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
       let linkHtml = "";
       if (projectLinks[i]) {
-        linkHtml =
-          projectNames[i] === "BANGER_PLANET"
-            ? `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600">Voir la vidéo</a>`
-            : `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600">Voir le projet en ligne</a>`;
+        linkHtml = `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-500">Voir le projet</a>`;
       }
 
       card.innerHTML = `
         <div class="flip-inner shadow-lg cursor-pointer">
           <div class="flip-front bg-gradient-to-r ${gradients[i]} p-6 rounded-2xl">
-            <h3 class="text-xl font-bold">${projectNames[i]}</h3>
+            <h3 class="text-xl font-bold text-black dark:text-white">${projectNames[i]}</h3>
           </div>
           <div class="flip-back rounded-2xl p-6 bg-gray-800 text-white">
             <p>${projectDetails[i]}${linkHtml ? "<br><br>" + linkHtml : ""}</p>
@@ -77,26 +102,30 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  VANTA.BIRDS({
-    el: "#contact",
-    mouseControls: true,
-    touchControls: true,
-    minHeight: 400.0,
-    minWidth: 300.0,
-    scale: 1.0,
-    scaleMobile: 1.0,
-    backgroundAlpha: 0,
-    color1: 0xff69b4,
-    color2: 0xffb6c1,
-    birdSize: 1.2,
-    wingSpan: 25.0,
-    speedLimit: 2.5,
-    separation: 50.0,
-    alignment: 25.0,
-    cohesion: 20.0,
-    quantity: 10,
-  });
+  // VANTA.BIRDS pour contact
+  if (window.VANTA && document.getElementById("contact")) {
+    VANTA.BIRDS({
+      el: "#contact",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 400.0,
+      minWidth: 300.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      backgroundAlpha: 0,
+      color1: 0xff69b4,
+      color2: 0xffb6c1,
+      birdSize: 1.2,
+      wingSpan: 25.0,
+      speedLimit: 2.5,
+      separation: 50.0,
+      alignment: 25.0,
+      cohesion: 20.0,
+      quantity: 10,
+    });
+  }
 
+ 
   const sections = document.querySelectorAll("main section");
   const navLinks = document.querySelectorAll("nav a");
 
@@ -124,27 +153,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", onScroll);
   onScroll();
-
-  const themeToggle = document.getElementById("theme-toggle");
-
-  function setTheme(theme) {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      themeToggle.textContent = "☀️";
-    } else {
-      document.documentElement.classList.remove("dark");
-      themeToggle.textContent = "🌙";
-    }
-    localStorage.setItem("theme", theme);
-  }
-
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
-
-  themeToggle.addEventListener("click", () => {
-    const newTheme = document.documentElement.classList.contains("dark")
-      ? "light"
-      : "dark";
-    setTheme(newTheme);
-  });
 });
