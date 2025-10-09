@@ -3,54 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MY_SPOTIFY - Vidéo</title>
-
-  <!-- Fonts -->
+  <title>BANGER_PLANET</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
 </head>
 <body class="font-[Poppins] bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-500">
-
-  <!-- HEADER -->
   <header class="fixed top-0 w-full bg-white/50 dark:bg-black/50 backdrop-blur z-50 transition-colors duration-500">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
       <nav class="flex items-center gap-6">
         <a href="index.html#projets" class="hover:text-blue-500 transition">← Retour aux projets</a>
         <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition" aria-label="Changer de thème">🌙</button>
       </nav>
+      <div id="small-title" class="text-lg font-bold opacity-0 transition-opacity duration-300 pointer-events-none"></div>
     </div>
   </header>
 
-  <!-- VIDÉO EN PLEIN ÉCRAN -->
   <main class="relative w-full h-screen overflow-hidden">
-    <video autoplay muted loop class="w-full h-full object-cover">
-      <source src="src/assets/ta-video.mp4" type="video/mp4">
+    <video id="hero-video" controls playsinline class="w-full h-full object-cover">
+      <source src="src/assets/bangerplanet.mp4" type="video/mp4">
       Votre navigateur ne supporte pas la vidéo HTML5.
     </video>
 
-    <!-- Overlay pour texte ou boutons -->
-    <div class="absolute inset-0 bg-white/30 dark:bg-black/30 flex flex-col justify-center items-center text-center px-6 transition-colors duration-500">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">MY SPOTIFY</h1>
-      <p class="text-lg md:text-2xl">Découvrez l’expérience en vidéo</p>
+    <div id="overlay" class="absolute inset-0 bg-white/30 dark:bg-black/30 flex flex-col justify-center items-center text-center px-6 transition-colors duration-500 pointer-events-none">
+      <h1 id="overlay-title" class="text-4xl md:text-6xl font-bold mb-4">BANGER_PLANET</h1>
+      <p class="text-lg md:text-2xl">En grand écran cest mieux non ?</p>
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="py-6 text-center text-sm bg-white/50 dark:bg-black/50 transition-colors duration-500">
     © 2025 Portfolio Dev. Tous droits réservés.
   </footer>
 
-  <!-- SCRIPT MODE JOUR/NUIT -->
   <script>
     const themeToggle = document.getElementById('theme-toggle');
-
     function setTheme(theme) {
-      if(theme === 'dark') {
+      if (theme === 'dark') {
         document.documentElement.classList.add('dark');
         themeToggle.textContent = '☀️';
       } else {
@@ -59,15 +49,43 @@
       }
       localStorage.setItem('theme', theme);
     }
-
-    // Charger le thème sauvegardé
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
-
-    // Toggle au clic
     themeToggle.addEventListener('click', () => {
       const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
       setTheme(newTheme);
+    });
+
+    const video = document.getElementById('hero-video');
+    const overlay = document.getElementById('overlay');
+    const overlayTitle = document.getElementById('overlay-title');
+    const smallTitle = document.getElementById('small-title');
+
+    function showSmallTitle() {
+      smallTitle.textContent = overlayTitle.textContent;
+      smallTitle.classList.remove('opacity-0');
+      smallTitle.classList.add('opacity-100');
+    }
+
+    function hideSmallTitle() {
+      smallTitle.classList.remove('opacity-100');
+      smallTitle.classList.add('opacity-0');
+      setTimeout(() => { smallTitle.textContent = ''; }, 300);
+    }
+
+    video.addEventListener('play', () => {
+      overlay.classList.add('hidden');
+      showSmallTitle();
+    });
+
+    video.addEventListener('pause', () => {
+      overlay.classList.remove('hidden');
+      hideSmallTitle();
+    });
+
+    video.addEventListener('ended', () => {
+      overlay.classList.remove('hidden');
+      hideSmallTitle();
     });
   </script>
 </body>
