@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MURY Princie</title>
 
-    <!--Fonts-->
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { darkMode: "class" };
@@ -30,6 +31,7 @@
       }
     </script>
   </head>
+
   <body
     class="font-[Poppins] bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-500"
   >
@@ -41,9 +43,7 @@
         <nav id="navbar" class="flex items-center gap-6">
           <a href="#accueil" class="hover:text-blue-500 transition">Accueil</a>
           <a href="#profil" class="hover:text-blue-500 transition">Profil</a>
-          <a href="#competences" class="hover:text-blue-500 transition"
-            >Compétences</a
-          >
+          <a href="#competences" class="hover:text-blue-500 transition">Compétences</a>
           <a href="#projets" class="hover:text-blue-500 transition">Projets</a>
           <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
           <button
@@ -62,7 +62,6 @@
       <section id="accueil" class="text-center animate-fade-in py-20">
         <h1 class="text-7xl font-extrabold mb-4">MURY PRINCIE</h1>
 
-        <!-- Titre accroche -->
         <div class="mb-12">
           <h2 class="typewriter text-2xl font-medium">
             Développeur web full stack
@@ -100,15 +99,13 @@
           >
             Profil
           </h2>
-          <!-- Slogan -->
-    <p class="text-xl font-medium leading-relaxed text-black dark:text-white">
-  Bonjour je suis <span class="font-bold">MURY Princie</span>, un passionné du
-  web et des technologies. Mon quotidien :
-  <span class="font-semibold">
-    allier design et back-end pour façonner vos projets
-  </span>.
-</p>
-
+          <p class="text-xl font-medium leading-relaxed text-black dark:text-white">
+            Bonjour, je suis <span class="font-bold">MURY Princie</span>, un passionné du
+            web et des technologies. Mon quotidien :
+            <span class="font-semibold">
+              allier design et back-end pour façonner vos projets.
+            </span>
+          </p>
 
           <video
             class="w-11/12 max-w-3xl mx-auto mt-10 rounded-xl shadow-lg"
@@ -122,10 +119,6 @@
           </video>
         </div>
       </section>
-
-      <!--  Vanta.js pour les fonds -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 
       <!-- ========== Compétences ========== -->
       <section
@@ -165,81 +158,42 @@
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"
         ></div>
       </section>
-      <script src="src/js/script.js"></script>
 
-      <!-- ========== Contact ========== -->
-      <section
-        id="contact"
-        class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative"
-        style="scroll-margin-top: 120px"
-      >
-        <h2
-          class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative"
-        >
-          Contact
-        </h2>
+      <!-- ===== Contact ===== -->
+      <section id="contact" class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative" style="scroll-margin-top: 120px">
+        <h2 class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative">Contact</h2>
 
-       <img
-  src="src/assets/accueil-unscreen.gif"
-  alt="Animation d'accueil"
-  class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg dark:shadow-white/30 z-10 relative"
-/>
+        <img src="src/assets/accueil-unscreen.gif" alt="Animation d'accueil" class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg dark:shadow-white/30 z-10 relative" />
 
+        <!-- Liens et CV -->
+        <div class="mt-6 flex flex-col items-center gap-4 text-lg">
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="src/assets/Mprincie%20Design%20.pdf" download class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition">Télécharger CV Design</a>
+            <a href="src/assets/Mprincie%20Impression.pdf" download class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition">Télécharger CV Impression</a>
+          </div>
+          <div class="flex justify-center gap-6 mt-4">
+            <a href="https://github.com/muryPrincie" target="_blank" class="text-gray-700 dark:text-gray-200 hover:text-blue-500 transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/tiana-finaritra-princie-mury-85a4b2359/" target="_blank" class="text-blue-700 hover:underline hover:text-blue-500 transition">LinkedIn</a>
+          </div>
+        </div>
 
-        <form
-          name="contact"
-          method="POST"
-          netlify
-          class="mt-6 flex flex-col gap-4 z-10 relative"
-        >
-          <label for="name" class="sr-only">Nom</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Votre nom"
-            required
-            class="p-3 rounded-lg border dark:border-gray-700 text-black"
-          />
+        <!-- Formulaire POST FormSubmit -->
+        <form action="https://formsubmit.co/princie.muryy@gmail.com" method="POST" class="mt-8 flex flex-col gap-4 z-10 relative">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le portfolio !" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+          <!-- redirection locale après envoi -->
+          <input type="hidden" name="_next" value="http://127.0.0.1:5501/merci.html" />
 
-          <label for="email" class="sr-only">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Votre email"
-            required
-            class="p-3 rounded-lg border dark:border-gray-700 text-black"
-          />
+          <input type="text" name="Nom" placeholder="Votre nom" required class="p-3 rounded-lg border dark:border-gray-700 text-black" />
+          <input type="email" name="Email" placeholder="Votre email" required class="p-3 rounded-lg border dark:border-gray-700 text-black" />
+          <textarea name="Message" rows="6" placeholder="Votre message" required class="p-3 rounded-lg border dark:border-gray-700 text-black"></textarea>
 
-          <label for="message" class="sr-only">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            placeholder="Votre message"
-            required
-            class="p-3 rounded-lg border dark:border-gray-700 text-black"
-          ></textarea>
-
-          <button
-            type="submit"
-            class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition"
-          >
-            Envoyer
-          </button>
+          <button type="submit" class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition">Envoyer</button>
         </form>
       </section>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.birds.min.js"></script>
-      <script src="src/js/vanta-contact.js"></script>
-      <!-- Script Vanta pour contact -->
     </main>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="mt-20 py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
-      © 2025 Portfolio Dev. Tous droits réservés.
-    </footer>
+    <script src="src/js/script.js"></script>
   </body>
 </html>

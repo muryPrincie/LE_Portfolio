@@ -102,28 +102,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // VANTA.BIRDS pour contact
-  if (window.VANTA && document.getElementById("contact")) {
-    VANTA.BIRDS({
-      el: "#contact",
-      mouseControls: true,
-      touchControls: true,
-      minHeight: 400.0,
-      minWidth: 300.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
-      backgroundAlpha: 0,
-      color1: 0xff69b4,
-      color2: 0xffb6c1,
-      birdSize: 1.2,
-      wingSpan: 25.0,
-      speedLimit: 2.5,
-      separation: 50.0,
-      alignment: 25.0,
-      cohesion: 20.0,
-      quantity: 10,
-    });
-  }
 
  
   const sections = document.querySelectorAll("main section");
