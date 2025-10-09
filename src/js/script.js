@@ -56,20 +56,20 @@ window.addEventListener("DOMContentLoaded", () => {
     ];
 
     const projectNames = [
-      "BANGER_PLANET",
       "JUMP_ERA",
       "PUISSANCE_KONG",
       "MY_WYSIWYG",
+      "BANGER_PLANET",
       "PROJET PERSO",
     ];
 
     const projectDetails = [
-      "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive...",
-      "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs...",
-      "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript...",
-      "MY_WYSIWYG est un éditeur de texte en ligne personnalisable...",
-      "PROJET PERSO – En cours de conception.",
-    ];
+  "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs avec un système d’authentification complet, ainsi que des pages produits connectées à leur propre base de données. (Développé avec PHP, MySQL et Tailwind.css)",
+  "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript, avec un univers inspiré de Donkey Kong et un fond thématique. Le jeu propose un mode deux joueurs et un mode contre l’ordinateur (en cours de finalisation... Développer avec Javascript, CSS et HTML)",
+  "MY_WYSIWYG est un éditeur de texte en ligne personnalisable, conçu pour permettre la mise en forme et le stylage du contenu avec une interface claire, moderne et intuitive.(Développé avec Javascript, HTML et CSS).",
+  "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive permettant d’explorer albums, artistes et genres à travers une interface moderne et fluide. (Développé avec React,Tailwind, CSS et une API Docker)",
+  "PROJET PERSO – En cours de conception.",
+];
 
     const projectLinks = [
       "spotify.html",
