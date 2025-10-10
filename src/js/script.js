@@ -73,8 +73,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const projectLinks = [
       "https://jump-area.wuaze.com/login.php",
-      "https://kong4.netlify.app/",
-      "https://remarkable-starship-314c64.netlify.app/",
+      "https://puissancek.netlify.app/",
+      "https://mywysiwyg.netlify.app/",
       "spotify.html",
       "",
     ];
