@@ -4,41 +4,89 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BANGER_PLANET</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class' }
   </script>
+
+  <style>
+    /* Rendre la vidéo responsive avec un ratio conservé */
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* ratio 16:9 */
+    }
+    .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
+
 <body class="font-[Poppins] bg-white dark:bg-black text-gray-900 dark:text-white transition-colors duration-500">
+
+  <!-- HEADER RESPONSIVE -->
   <header class="fixed top-0 w-full bg-white/50 dark:bg-black/50 backdrop-blur z-50 transition-colors duration-500">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-      <nav class="flex items-center gap-6">
-        <a href="index.html#projets" class="hover:text-blue-500 transition">← Retour aux projets</a>
-        <button id="theme-toggle" class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition" aria-label="Changer de thème">🌙</button>
+
+      <!-- Navigation -->
+      <nav class="flex items-center gap-4 sm:gap-6 text-sm sm:text-base">
+        <a href="index.html#projets" class="hover:text-blue-500 transition">← Retour</a>
+
+        <button id="theme-toggle"
+                class="ml-2 sm:ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"
+                aria-label="Changer de thème">
+          🌙
+        </button>
       </nav>
-      <div id="small-title" class="text-lg font-bold opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+      <!-- Petit titre affiché pendant la lecture -->
+      <div id="small-title"
+           class="text-xs sm:text-lg font-bold opacity-0 transition-opacity duration-300 pointer-events-none">
+      </div>
     </div>
   </header>
 
-  <main class="relative w-full h-screen overflow-hidden">
-    <video id="hero-video" controls playsinline class="w-full h-full object-cover">
-      <source src="src/assets/bangerplanet.mp4" type="video/mp4">
-      Votre navigateur ne supporte pas la vidéo HTML5.
-    </video>
+  <!-- MAIN RESPONSIVE -->
+  <main class="relative w-full pt-[70px]"> <!-- padding top pour que la vidéo ne passe pas sous le header -->
 
-    <div id="overlay" class="absolute inset-0 bg-white/30 dark:bg-black/30 flex flex-col justify-center items-center text-center px-6 transition-colors duration-500 pointer-events-none">
-      <h1 id="overlay-title" class="text-4xl md:text-6xl font-bold mb-4">BANGER_PLANET</h1>
-      <p class="text-lg md:text-2xl">En grand écran cest mieux non ?</p>
+    <!-- WRAPPER VIDEO RESPONSIVE -->
+    <div class="video-wrapper">
+      <video id="hero-video" controls playsinline>
+        <source src="src/assets/bangerplanet.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la vidéo HTML5.
+      </video>
+    </div>
+
+    <!-- OVERLAY RESPONSIVE -->
+    <div id="overlay"
+         class="absolute inset-0 bg-white/30 dark:bg-black/30 flex flex-col justify-center items-center text-center px-4 sm:px-6 transition-colors duration-500 pointer-events-none">
+      <h1 id="overlay-title" class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4">
+        BANGER_PLANET
+      </h1>
+      <p class="text-base sm:text-lg md:text-2xl">
+        Projet sous format vidéo, merci d'avance pour votre attention !
+      </p>
     </div>
   </main>
 
-  <footer class="py-6 text-center text-sm bg-white/50 dark:bg-black/50 transition-colors duration-500">
-    © 2025 Portfolio Dev. Tous droits réservés.
-  </footer>
+<!-- FOOTER -->
+<footer class="py-3 text-center text-sm bg-white/50 dark:bg-black/50 transition-colors duration-500 mt-6">
+  Portfolio Princie 2025
+</footer>
 
+
+  <!-- SCRIPT -->
   <script>
     const themeToggle = document.getElementById('theme-toggle');
+
     function setTheme(theme) {
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
@@ -49,8 +97,10 @@
       }
       localStorage.setItem('theme', theme);
     }
+
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
+
     themeToggle.addEventListener('click', () => {
       const newTheme = document.documentElement.classList.contains('dark') ? 'light' : 'dark';
       setTheme(newTheme);
@@ -74,19 +124,21 @@
     }
 
     video.addEventListener('play', () => {
-      overlay.classList.add('hidden');
+      overlay.classList.add('opacity-0');
+      overlay.classList.add('pointer-events-none');
       showSmallTitle();
     });
 
     video.addEventListener('pause', () => {
-      overlay.classList.remove('hidden');
+      overlay.classList.remove('opacity-0');
       hideSmallTitle();
     });
 
     video.addEventListener('ended', () => {
-      overlay.classList.remove('hidden');
+      overlay.classList.remove('opacity-0');
       hideSmallTitle();
     });
   </script>
+
 </body>
 </html>
