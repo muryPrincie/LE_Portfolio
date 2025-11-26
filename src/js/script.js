@@ -28,7 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.documentElement.classList.toggle("dark", isDark);
     themeToggle.textContent = isDark ? "☀️" : "🌙";
 
-    // Mise à jour du thème VANTA
     if (profilBg && window.VANTA) initVanta(isDark);
   };
 
@@ -46,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const projectsGrid = document.getElementById("projects-grid");
   if (projectsGrid) {
+
     const gradients = [
       "from-indigo-400 to-fuchsia-500",
       "from-yellow-400 to-red-500",
@@ -54,7 +54,6 @@ window.addEventListener("DOMContentLoaded", () => {
       "from-pink-400 to-red-500",
     ];
 
-    // ✅ BANGER_PLANET réajouté ici
     const projectNames = [
       "JUMP_ERA",
       "PUISSANCE_KONG",
@@ -63,16 +62,14 @@ window.addEventListener("DOMContentLoaded", () => {
       "PROJET PERSO",
     ];
 
-    // ✅ Description réintégrée
     const projectDetails = [
       "JUMP_ERA est un mini site e-commerce intégrant une base de données utilisateurs avec un système d’authentification complet, ainsi que des pages produits connectées à leur propre base de données. (Développé avec PHP, MySQL et Tailwind.css)",
       "PUISSANCE_KONG est une revisite du jeu Puissance 4, développée en JavaScript, avec un univers inspiré de Donkey Kong et un fond thématique. Le jeu propose un mode deux joueurs et un mode contre l’ordinateur (en cours de finalisation... Développer avec Javascript, CSS et HTML)",
       "MY_WYSIWYG est un éditeur de texte en ligne personnalisable, conçu pour permettre la mise en forme et le stylage du contenu avec une interface claire, moderne et intuitive. (Développé avec Javascript, HTML et CSS).",
-      "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive permettant d’explorer albums, artistes et genres à travers une interface moderne et fluide. (Développé avec React, Tailwind, CSS et une API Docker)",
+      "Inspiré de Spotify, BANGER_Planet est une plateforme musicale interactive permettant d’explorer albums, artistes et genres à travers une interface moderne et fluide. (Développé avec React,Tailwind, CSS et une API Docker)",
       "PROJET PERSO – En cours de conception.",
     ];
 
-    // ✅ Lien réintégré ici
     const projectLinks = [
       "https://jump-area.wuaze.com/login.php",
       "https://puissancek.netlify.app/",
@@ -81,26 +78,45 @@ window.addEventListener("DOMContentLoaded", () => {
       "",
     ];
 
-    // Boucle adaptée automatiquement
+    // ✅ AJOUT DES IMAGES DE TEASER
+    const projectImages = [
+      "src/assets/jumpera.png",
+      "src/assets/puissancekong.png",
+      "src/assets/edittext.png",
+      "src/assets/banger.png",
+      ""
+    ];
+
     for (let i = 0; i < projectNames.length; i++) {
       const card = document.createElement("div");
       card.className = "flip-card";
 
+      // Boutons
       let linkHtml = "";
       if (projectLinks[i]) {
-        linkHtml = `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-500">Voir le projet</a>`;
+        linkHtml += `<a href="${projectLinks[i]}" target="_blank" class="underline text-blue-400 hover:text-blue-600 dark:text-blue-300 dark:hover:text-blue-500 mr-2">Voir le projet</a>`;
       }
 
+      if (projectImages[i]) {
+        linkHtml += `<a href="${projectImages[i]}" target="_blank" class="underline text-green-400 hover:text-green-600 dark:text-green-300 dark:hover:text-green-500">Aperçu</a>`;
+      }
+
+      // Structure de la carte
       card.innerHTML = `
         <div class="flip-inner shadow-lg cursor-pointer">
           <div class="flip-front bg-gradient-to-r ${gradients[i]} p-6 rounded-2xl">
+            
+            ${projectImages[i] ? `<img src="${projectImages[i]}" alt="${projectNames[i]}" class="w-full h-40 object-cover rounded-lg mb-4">` : ""}
+
             <h3 class="text-xl font-bold text-black dark:text-white">${projectNames[i]}</h3>
           </div>
+
           <div class="flip-back rounded-2xl p-6 bg-gray-800 text-white">
-            <p>${projectDetails[i]}${linkHtml ? "<br><br>" + linkHtml : ""}</p>
+            <p>${projectDetails[i]}<br><br>${linkHtml}</p>
           </div>
         </div>
       `;
+
       projectsGrid.appendChild(card);
     }
   }
