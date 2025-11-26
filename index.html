@@ -5,29 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MURY Princie - Développeur Web Full Stack</title>
 
-   
-    <meta name="description" content="Portfolio de MURY Princie, développeur web full stack passionné par le design et les technologies. Découvrez mes projets, compétences et mon profil.">
-    <meta name="keywords" content="MURY Princie, développeur web, full stack, portfolio, HTML, CSS, JavaScript, PHP, React, Tailwind, design, web developer, front-end, back-end">
-    <meta name="author" content="MURY Princie">
+    <meta
+      name="description"
+      content="Portfolio de MURY Princie, développeur web full stack passionné par le design et les technologies. Découvrez mes projets, compétences et mon profil."
+    />
+    <meta
+      name="keywords"
+      content="MURY Princie, développeur web, full stack, portfolio, HTML, CSS, JavaScript, PHP, React, Tailwind, design, web developer, front-end, back-end"
+    />
+    <meta name="author" content="MURY Princie" />
     <meta name="robots" content="index, follow" />
 
-   
     <link rel="icon" type="image/png" href="src/assets/favicon.png" />
 
-   
-    <meta property="og:title" content="MURY Princie - Développeur Web Full Stack" />
-    <meta property="og:description" content="Découvrez le portfolio de MURY Princie, développeur web full stack passionné de design et de technologies.">
-    <meta property="og:image" content="https://portfoliomuryprincie.netlify.app/src/assets/moiofficiel.png" />
-    <meta property="og:url" content="https://portfoliomuryprincie.netlify.app/" />
+    <meta
+      property="og:title"
+      content="MURY Princie - Développeur Web Full Stack"
+    />
+    <meta
+      property="og:description"
+      content="Découvrez le portfolio de MURY Princie, développeur web full stack passionné de design et de technologies."
+    />
+    <meta
+      property="og:image"
+      content="https://portfoliomuryprincie.netlify.app/src/assets/moiofficiel.png"
+    />
+    <meta
+      property="og:url"
+      content="https://portfoliomuryprincie.netlify.app/"
+    />
     <meta property="og:type" content="website" />
 
-    
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="MURY Princie - Développeur Web Full Stack" />
-    <meta name="twitter:description" content="Portfolio professionnel de MURY Princie, développeur web full stack." />
-    <meta name="twitter:image" content="https://portfoliomuryprincie.netlify.app/src/assets/moiofficiel.png" />
+    <meta
+      name="twitter:title"
+      content="MURY Princie - Développeur Web Full Stack"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio professionnel de MURY Princie, développeur web full stack."
+    />
+    <meta
+      name="twitter:image"
+      content="https://portfoliomuryprincie.netlify.app/src/assets/moiofficiel.png"
+    />
 
-    <!-- Données structurées pour le SEO -->
+    <!-- SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -43,7 +66,6 @@
       }
     </script>
 
-    <!--Fonts-->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap"
       rel="stylesheet"
@@ -77,15 +99,32 @@
         <nav id="navbar" class="flex items-center gap-6">
           <a href="#accueil" class="hover:text-blue-500 transition">Accueil</a>
           <a href="#profil" class="hover:text-blue-500 transition">Profil</a>
-          <a href="#competences" class="hover:text-blue-500 transition">Compétences</a>
+          <a href="#competences" class="hover:text-blue-500 transition"
+            >Compétences</a
+          >
           <a href="#projets" class="hover:text-blue-500 transition">Projets</a>
           <a href="#contact" class="hover:text-blue-500 transition">Contact</a>
+
+          <!-- CV -->
+          <a
+            href="ton-cv.pdf"
+            download
+            class="px-4 py-2 rounded-lg bg-green-500 text-white dark:text-[rgb(17_24_39_/_0.8)] hover:bg-green-600 transition shadow"
+          >
+            Télécharger CV
+          </a>
+
           <button
             id="theme-toggle"
-            class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"
+            class="ml-4 p-4 rounded-full bg-gray-200 dark:bg-gray-700 hover:scale-110 transition"
             aria-label="Changer de thème"
           >
-            🌙
+            <img
+              id="theme-icon"
+              src="src/assets/lune.png"
+              alt="Icône thème"
+              class="w-8 h-8"
+            />
           </button>
         </nav>
       </div>
@@ -129,15 +168,29 @@
           >
             Profil
           </h2>
-       <div class="max-w-3xl mx-auto p-6 rounded-xl bg-black text-white dark:bg-white dark:text-black shadow-lg transition-colors duration-500">
-  <p class="text-xl font-medium leading-relaxed">
-    Bonjour, je suis <span class="font-bold">MURY Princie</span>, passionné d’informatique, de jeux vidéo et doté d’un véritable côté artistique.
-    Après deux années dans le domaine de la logistique, j’ai décidé de me reconvertir dans le développement web pour suivre ce qui m’anime réellement.
-    Cette nouvelle voie m’a conduit à la <span class="font-semibold">Web@cadémie by Epitech</span>, où je développe chaque jour mes compétences et ma créativité.
-    J’aime donner vie aux idées, créer des interfaces immersives et concevoir des structures techniques solides. Le code est pour moi un espace d’expression,
-    où logique et imagination se rencontrent pour bâtir des projets utiles, modernes et innovants.
-  </p>
-</div>
+          <div
+            class="max-w-3xl mx-auto p-6 rounded-xl bg-black text-white dark:bg-white dark:text-black shadow-lg transition-colors duration-500"
+          >
+            <p class="text-xl font-medium leading-relaxed">
+              Bonjour, je suis <span class="font-bold">MURY Princie</span>,
+              passionné d’informatique, de jeux vidéo et doté d’un véritable
+              côté artistique. Après deux années dans le domaine de la
+              logistique, j’ai décidé de me reconvertir dans le développement
+              web pour suivre ce qui m’anime réellement. Cette nouvelle voie m’a
+              conduit à la
+              <span class="font-semibold">Web@cadémie by Epitech</span>, où
+              j’apprends et développe chaque jour mes compétences ainsi que ma
+              créativité. J’aime donner vie aux idées, créer des interfaces
+              immersives et concevoir des structures techniques solides. Le code
+              est pour moi un espace d’expression où logique et imagination se
+              rencontrent pour bâtir des projets utiles, modernes et innovants.
+              <br /><br />
+              <span class="font-extrabold">
+                « Faire des erreurs, c’est normal. La seule erreur
+                impardonnable, c’est d’abandonner. »
+              </span>
+            </p>
+          </div>
 
           <video
             class="w-11/12 max-w-3xl mx-auto mt-10 rounded-xl shadow-lg"
@@ -153,82 +206,80 @@
         </div>
       </section>
 
-      <!-- Vanta.js -->
+      <!-- Vanta liens -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-<!-- ========== Compétences ========== -->
-<section id="competences" class="max-w-7xl mx-auto text-center animate-fade-in-up py-20">
-  <h2 class="text-3xl font-bold mb-8 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500">
-    Compétences
-  </h2>
+      <!-- ========== Compétences ========== -->
+      <section
+        id="competences"
+        class="max-w-7xl mx-auto text-center animate-fade-in-up py-20"
+      >
+        <h2
+          class="text-3xl font-bold mb-8 section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500"
+        >
+          Compétences
+        </h2>
 
-  <video
-    class="w-full max-w-3xl mx-auto rounded-2xl shadow-lg"
-    autoplay
-    muted
-    loop
-    playsinline
-    title="Présentation des compétences de MURY Princie"
-  >
-    <source src="src/assets/competences.mp4" type="video/mp4" />
-    Ton navigateur ne supporte pas la lecture vidéo.
-  </video>
+        <video
+          class="w-full max-w-3xl mx-auto rounded-2xl shadow-lg"
+          autoplay
+          muted
+          loop
+          playsinline
+          title="Présentation des compétences de MURY Princie"
+        >
+          <source src="src/assets/competences.mp4" type="video/mp4" />
+          Ton navigateur ne supporte pas la lecture vidéo.
+        </video>
 
-  <!-- ====== Compétences listées ====== -->
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-left">
+        <!-- ====== Compétences ====== -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 text-left">
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-4">Langages</h3>
+            <ul class="space-y-2">
+              <li>PHP</li>
+              <li>JavaScript</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>SQL</li>
+            </ul>
+          </div>
 
-    <!-- Langages -->
-    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
-      <h3 class="text-xl font-semibold mb-4">Langages</h3>
-      <ul class="space-y-2">
-        <li>PHP</li>
-        <li>JavaScript</li>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>SQL</li>
-      </ul>
-    </div>
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-4">Frameworks</h3>
+            <ul class="space-y-2">
+              <li>Symfony</li>
+              <li>Laravel</li>
+              <li>React</li>
+              <li>Next.js</li>
+              <li>Express.js</li>
+              <li>TailwindCSS</li>
+            </ul>
+          </div>
 
-    <!-- Frameworks -->
-    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
-      <h3 class="text-xl font-semibold mb-4">Frameworks</h3>
-      <ul class="space-y-2">
-        <li>Symfony</li>
-        <li>Laravel</li>
-        <li>React</li>
-        <li>Next.js</li>
-        <li>Express.js</li>
-        <li>TailwindCSS</li>
-      </ul>
-    </div>
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-4">Environnement technique</h3>
+            <ul class="space-y-2">
+              <li>Node.js</li>
+              <li>MongoDB</li>
+              <li>GitHub</li>
+              <li>Docker</li>
+            </ul>
+          </div>
 
-    <!-- Environnement technique -->
-    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
-      <h3 class="text-xl font-semibold mb-4">Environnement technique</h3>
-      <ul class="space-y-2">
-        <li>Node.js</li>
-        <li>MongoDB</li>
-        <li>GitHub</li>
-        <li>Docker</li>
-      </ul>
-    </div>
-
-    <!-- Soft-skills -->
-    <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
-      <h3 class="text-xl font-semibold mb-4">Soft-skills</h3>
-      <ul class="space-y-2">
-        <li>Organisation</li>
-        <li>Travail d’équipe</li>
-        <li>Créativité</li>
-        <li>Adaptabilité</li>
-        <li>Curiosité</li>
-        <li>Initiative</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
+          <div class="p-6 bg-gray-100 dark:bg-gray-800 rounded-xl shadow">
+            <h3 class="text-xl font-semibold mb-4">Soft-skills</h3>
+            <ul class="space-y-2">
+              <li>Organisation</li>
+              <li>Travail d’équipe</li>
+              <li>Créativité</li>
+              <li>Adaptabilité</li>
+              <li>Curiosité</li>
+              <li>Initiative</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
       <!-- ========== Projets ========== -->
       <section
@@ -241,7 +292,10 @@
         >
           Projets
         </h2>
-        <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"></div>
+        <div
+          id="projects-grid"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4"
+        ></div>
       </section>
 
       <script src="src/js/script.js"></script>
@@ -249,61 +303,84 @@
       <!-- ========== Contact ========== -->
       <section
         id="contact"
-        class="max-w-2xl mx-auto text-center animate-fade-in-up py-20 relative"
+        class="max-w-3xl mx-auto text-center animate-fade-in-up py-20 relative"
         style="scroll-margin-top: 120px"
       >
-        <h2 class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative">
+        <h2
+          class="text-3xl font-bold section-title bg-black text-white dark:bg-white dark:text-black rounded-lg inline-block px-4 py-2 transition-colors duration-500 z-10 relative"
+        >
           Contact
         </h2>
+
         <img
           src="src/assets/accueil-unscreen.gif"
           alt="Animation d'accueil portfolio de MURY Princie"
           class="w-64 md:w-96 mx-auto my-6 rounded-xl shadow-lg dark:shadow-white/30 z-10 relative"
         />
 
-        <!-- CV et liens -->
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-6 z-10 relative">
-          <a href="src/assets/Mprincie_Design.pdf" download class="px-4 py-2 bg-green-500 text-white rounded-xl shadow hover:bg-green-600 transition">
-            Télécharger CV Design
+        <div class="flex justify-center gap-10 mb-8 z-10 relative">
+          <!-- GitHub -->
+          <a href="https://github.com/muryPrincie" target="_blank">
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-xl shadow bg-gray-200 dark:bg-white hover:scale-110 transition cursor-pointer"
+            >
+              <img src="src/assets/git.png" alt="GitHub" class="w-8 h-8" />
+            </div>
           </a>
-          <a href="src/assets/Mprincie_Impression.pdf" download class="px-4 py-2 bg-green-500 text-white rounded-xl shadow hover:bg-green-600 transition">
-            Télécharger CV Impression
+
+          <!-- LinkedIn -->
+          <a
+            href="https://linkedin.com/in/tiana-finaritra-princie-mury-85a4b2359"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div
+              class="w-14 h-14 flex items-center justify-center rounded-xl shadow bg-gray-200 dark:bg-white hover:scale-110 transition cursor-pointer"
+            >
+              <img src="src/assets/din.png" alt="LinkedIn" class="w-8 h-8" />
+            </div>
           </a>
         </div>
 
-        <div class="flex justify-center gap-6 mb-6 z-10 relative">
-  <a
-    href="https://github.com/muryPrincie"
-    target="_blank"
-    class="text-blue-500 hover:underline"
-  >
-    GitHub
-  </a>
-  <a
-    href="https://linkedin.com/in/tiana-finaritra-princie-mury-85a4b2359"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="text-blue-500 hover:underline"
-  >
-    LinkedIn
-  </a>
-</div>
-
-
+        <!-- Form -->
         <form
           name="contact"
           method="POST"
           action="mailto:princie.muryy@gmail.com"
           enctype="text/plain"
-          class="mt-6 flex flex-col gap-4 z-10 relative"
+          class="mt-6 flex flex-col gap-5 mx-auto w-full max-w-2xl z-10 relative"
         >
-          <label for="name" class="sr-only">Nom</label>
-          <input type="text" id="name" name="name" placeholder="Votre nom" required class="p-3 rounded-lg border dark:border-gray-700 text-black" />
-          <label for="email" class="sr-only">Email</label>
-          <input type="email" id="email" name="email" placeholder="Votre email" required class="p-3 rounded-lg border dark:border-gray-700 text-black" />
-          <label for="message" class="sr-only">Message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Votre message" required class="p-3 rounded-lg border dark:border-gray-700 text-black"></textarea>
-          <button type="submit" class="px-6 py-3 bg-blue-500 text-white rounded-xl shadow hover:bg-blue-600 transition">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Votre nom"
+            required
+            class="p-5 rounded-xl border dark:border-gray-700 text-black text-lg shadow"
+          />
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Votre email"
+            required
+            class="p-5 rounded-xl border dark:border-gray-700 text-black text-lg shadow"
+          />
+
+          <textarea
+            id="message"
+            name="message"
+            rows="7"
+            placeholder="Votre message"
+            required
+            class="p-5 rounded-xl border dark:border-gray-700 text-black text-lg shadow"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="px-10 py-4 bg-blue-500 text-white text-xl rounded-xl shadow hover:bg-blue-600 transition"
+          >
             Envoyer
           </button>
         </form>
@@ -316,7 +393,7 @@
 
     <!-- ================= FOOTER ================= -->
     <footer class="mt-20 py-6 text-center text-sm bg-gray-100 dark:bg-gray-800">
-      © 2025 Portfolio Dev. Tous droits réservés.
+      Portfolio Princie 2025
     </footer>
   </body>
 </html>
