@@ -12,6 +12,11 @@
   -webkit-backdrop-filter: blur(6px);
 }
 
+html {
+  scroll-padding-top: 120px; 
+}
+
+
 body.dark .section-title {
   background: rgba(17, 24, 39, 0.8);
   border-color: #374151;
